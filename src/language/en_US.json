@@ -1,0 +1,31 @@
+{
+  "categories": [
+    { "class": "detail", "name": "product details" },
+    { "class": "quantity", "name": "quantity" },
+    { "class": "price", "name": "price" },
+    { "class": "total", "name": "total" }
+  ],
+  "products": [
+    {
+      "code": "TSHIRT",
+      "name": "Cabify T-Shirt",
+      "price": "20",
+      "image": "shirt.png",
+      "type": "Shirt"
+    },
+    {
+      "code": "MUG",
+      "name": "Cafify Coffee Mug",
+      "price": "5",
+      "image": "mug.png",
+      "type": "Mug"
+    },
+    {
+      "code": "CAP",
+      "name": "Cabify Cap",
+      "price": "10",
+      "image": "cap.png",
+      "type": "Cap"
+    }
+  ]
+}
