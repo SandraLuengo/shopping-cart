@@ -21,4 +21,8 @@ export default styled(OrderSummary).attrs({})`
     align-items: center;
     margin: 0;
   }
+  .totalItems {
+    display: flex;
+    justify-content: space-between;
+  }
 `;

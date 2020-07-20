@@ -27,26 +27,32 @@ export default styled(ShoppingCart).attrs({})`
     letter-spacing: 1px;
     font-size: 10px;
     line-height: 16px;
+    &.productList {
+      flex-direction: column;
+    }
     &__row {
       display: flex;
       list-style: none;
       width: 100%;
       &__detail {
         width: 45%;
-        text-align:left;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
       }
       &__quantity,
       &__price {
         width: 20%;
-        text-align:center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       &__total {
         width: 15%;
-        text-align:center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
-  }
-  .productList {
-    flex-direction:column;
   }
 `;

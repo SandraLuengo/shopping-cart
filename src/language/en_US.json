@@ -11,21 +11,24 @@
       "name": "Cabify T-Shirt",
       "price": "20",
       "image": "shirt.png",
-      "type": "Shirt"
+      "type": "Shirt",
+      "currency": "€"
     },
     {
       "code": "MUG",
       "name": "Cafify Coffee Mug",
       "price": "5",
       "image": "mug.png",
-      "type": "Mug"
+      "type": "Mug",
+      "currency": "€"
     },
     {
       "code": "CAP",
       "name": "Cabify Cap",
       "price": "10",
       "image": "cap.png",
-      "type": "Cap"
+      "type": "Cap",
+      "currency": "€"
     }
   ]
 }
