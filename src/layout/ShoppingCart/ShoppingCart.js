@@ -1,8 +1,15 @@
 import React from "react";
-import { categories } from "../../language/en_US";
+
 import { RowProducts } from "../../commons";
 
-const ShoppingCart = ({ className, shoppingCart, setCartAction }) => {
+const ShoppingCart = ({
+  className,
+  categories,
+  currency,
+  shoppingTexts,
+  shoppingCart,
+  setCartAction,
+}) => {
   const handleChangeQuantity = (e) => {
     let code = e.target.name;
     let value = e.target.value || 0;
@@ -31,13 +38,12 @@ const ShoppingCart = ({ className, shoppingCart, setCartAction }) => {
         ? { ...product, quantity: newQuantity }
         : { ...product }
     );
-    console.log(updatedCart);
     setCartAction(updatedCart);
   };
 
   return (
     <div className={className}>
-      <h2 className="title">Shopping cart</h2>
+      <h2 className="title">{shoppingTexts.title}</h2>
       <ul className="product">
         {categories.map((category, i) => (
           <li
@@ -53,9 +59,11 @@ const ShoppingCart = ({ className, shoppingCart, setCartAction }) => {
           <RowProducts
             product={product}
             key={`product-${i}`}
+            shoppingTexts={shoppingTexts}
             handleChangeQuantity={handleChangeQuantity}
             handleIncrementQuantity={handleIncrementQuantity}
             handleDecrementQuantity={handleDecrementQuantity}
+            currency={currency}
           />
         ))}
       </ul>

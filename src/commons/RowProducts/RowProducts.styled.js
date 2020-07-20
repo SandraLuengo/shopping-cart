@@ -3,7 +3,7 @@ import RowProducts from "./RowProducts";
 
 export default styled(RowProducts).attrs({})`
   display: flex;
-
+  margin-bottom: 32px;
   .productList {
     &__row {
       &__detail {

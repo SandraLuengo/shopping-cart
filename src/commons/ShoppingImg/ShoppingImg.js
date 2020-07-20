@@ -1,13 +1,16 @@
 import React from "react";
 
-const ShoppingImg = ({ className, image, name, code }) => {
+const ShoppingImg = ({ className, image, productCode, name, code }) => {
+  console.log(name);
   const fileUrl = require(`../../static/images/${image}`);
   return (
     <div className={className}>
-      <img alt="img" src={`${fileUrl}`} />
-      <div>
-        <div>{name}</div>
-        <div>{code}</div>
+      <img className="productImg" alt="img" src={`${fileUrl}`} />
+      <div className="productInfo">
+        <div className="productInfo__name">{name}</div>
+        <div className="productInfo__code">
+          {productCode} {code}
+        </div>
       </div>
     </div>
   );

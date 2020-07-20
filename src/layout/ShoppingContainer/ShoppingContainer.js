@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { products } from "../../fixtures/products.json";
 import { ShoppingCart, OrderSummary } from "../../layout";
+import { categories, currency, orderSummary, shoppingTexts } from "../../language/en_US";
 import { setCartAction } from "../../redux/actions/shoppingCart/shoppingCartActions";
 
 const mapStateToProps = (state) => ({
@@ -18,8 +19,18 @@ const ShoppingContainer = ({ className, shoppingCart, setCartAction }) => {
 
   return (
     <div className={className}>
-      <ShoppingCart shoppingCart={shoppingCart} setCartAction={setCartAction} />
-      <OrderSummary shoppingCart={shoppingCart} />
+      <ShoppingCart
+        categories={categories}
+        currency={currency}
+        shoppingTexts={shoppingTexts}
+        shoppingCart={shoppingCart}
+        setCartAction={setCartAction}
+      />
+      <OrderSummary
+        orderSummary={orderSummary}
+        currency={currency}
+        shoppingCart={shoppingCart}
+      />
     </div>
   );
 };

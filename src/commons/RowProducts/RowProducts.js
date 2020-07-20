@@ -7,6 +7,8 @@ const RowProducts = ({
   handleChangeQuantity,
   handleIncrementQuantity,
   handleDecrementQuantity,
+  currency,
+  shoppingTexts,
 }) => {
   return (
     <li className={`${className} productList`}>
@@ -15,6 +17,7 @@ const RowProducts = ({
           image={product.image}
           code={product.code}
           name={product.name}
+          productCode={shoppingTexts.productCode}
         />
       </div>
       <div className="productList__row productList__row__quantity">
@@ -27,10 +30,10 @@ const RowProducts = ({
         />
       </div>
       <div className="productList__row productList__row__price">
-        {product.price} {product.currency}
+        {product.price} {currency}
       </div>
       <div className="productList__row productList__row__total">
-        {product.quantity * product.price} {product.currency}
+        {product.quantity * product.price} {currency}
       </div>
     </li>
   );

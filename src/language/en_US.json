@@ -1,34 +1,45 @@
 {
+  "shoppingTexts": {
+    "title": "Shopping cart",
+    "productCode": "Product code"
+  },
   "categories": [
     { "class": "detail", "name": "product details" },
     { "class": "quantity", "name": "quantity" },
     { "class": "price", "name": "price" },
     { "class": "total", "name": "total" }
   ],
+  "currency": "€",
   "products": [
     {
-      "code": "TSHIRT",
-      "name": "Cabify T-Shirt",
+      "code": "X7R2OPX",
+      "name": "Shirt",
       "price": "20",
       "image": "shirt.png",
-      "type": "Shirt",
-      "currency": "€"
+      "type": "Shirt"
     },
     {
-      "code": "MUG",
-      "name": "Cafify Coffee Mug",
+      "code": "X2G2OPZ",
+      "name": "Mug",
       "price": "5",
       "image": "mug.png",
-      "type": "Mug",
-      "currency": "€"
+      "type": "Mug"
     },
     {
-      "code": "CAP",
-      "name": "Cabify Cap",
+      "code": "X3W2OPY",
+      "name": "Cap",
       "price": "10",
       "image": "cap.png",
-      "type": "Cap",
-      "currency": "€"
+      "type": "Cap"
     }
-  ]
+  ],
+  "orderSummary": {
+    "title": "Order summary",
+    "discount": "Discounts",
+    "twoPerOne": "2x1 Mug offer",
+    "bulk": "x3 Shirt offer",
+    "items": "Items",
+    "totalCost": "Total Cost",
+    "checkout": "Checkout"
+  }
 }

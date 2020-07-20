@@ -13,7 +13,10 @@ class Checkout {
   }
 
   total() {
-    this.pricingRules(this.products);
+    return Object.keys(this.products).reduce(
+      (acc, key) => (acc += this.pricingRules(key, this.products[key])),
+      0
+    );
   }
 }
 
