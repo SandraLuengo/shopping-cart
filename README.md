@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shopping Cart 🛒
 
-## Available Scripts
+## Ecosystem
 
-In the project directory, you can run:
+| Project | Description |
+|---------|-------------|
+| [react]               | As Front-End Framework |
+| [react redux]               |Global State Manager |
+| [styled-components]        |Css with javascript logic|
+| [Jest, Cypress]        |Testing|
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## To run the application 🚀
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Run the client:
+````
+cd shopping-cart
+yarn 
+yarn start
+````
 
-### `yarn test`
+Run Jest tests:
+`````
+yarn test
+`````
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run Cypress tests:
+`````
+yarn run cypress open
+when cypress is open click in: shoppingCart.spec.js
+`````
 
-### `yarn build`
+## To build the application 📦
+`````
+yarn run build
+yarn global add serve
+serve -s build
+`````
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes 📝
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- I suppose that we access to this screen after having selected and added these products to the cart on some previous screen, so I have initialized all the products quantity in the cart at 1.
+- When the application is loaded, I add all the products of the cart in the redux state, to have access to them from all the application. Each product has a property quantity that I modify if I increase or decrease the quantity of any product. This way I have access to all the data in an object. If it had had an API, it would have created another variable with the product codes, to make requests to the API with this data.
+- ### **checkout class**
+    - I have created a function `pricingRules` which I pass as a parameter when an instance of `Checkout` class is created, this function is used to calculate the price of each product, applying discounts. The function has a switch statement, whether in the future we will have more promotions by adding a new case it will be enough for us
