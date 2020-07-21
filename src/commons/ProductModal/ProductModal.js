@@ -17,12 +17,12 @@ const ProductModal = ({
   };
 
   return (
-    <div className={`${className} productModal`}>
+    <div className={`${className} productModal`} data-cy={`modal-${code}`}>
       <div className="productModal__img">
         <img src={fileUrl} alt={`${actualProduct?.name}-modal`} />
       </div>
       <div className="productModal__description">
-        <Button handleFunction={closeModal} type="closeModal" content="X" />
+        <Button dataCy={`close-modal-${code}`} handleFunction={closeModal} type="closeModal" content="X" />
         <div className="productModal__description__product">
           <span className="productModal__description__product__name">
             {name}

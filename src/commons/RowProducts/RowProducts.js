@@ -17,6 +17,7 @@ const RowProducts = ({
       <div
         className="productList__row productList__row__detail"
         onClick={() => handleModal(product.code)}
+        data-cy={`product-open-modal-${product.code}`}
       >
         <ShoppingImg
           image={product.image}

@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Button = ({ className, handleFunction, content, type, code }) => {
+const Button = ({ className, handleFunction, content, type, code, dataCy }) => {
   return (
     <button
       name={code}
+      data-cy={dataCy}
       className={`${className} ${type}`}
       onClick={handleFunction}
     >
@@ -19,6 +20,7 @@ Button.propTypes = {
   content: PropTypes.string,
   type: PropTypes.string,
   code: PropTypes.string,
+  dataCy: PropTypes.string,
 };
 
 export default Button;

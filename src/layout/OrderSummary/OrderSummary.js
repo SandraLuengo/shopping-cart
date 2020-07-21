@@ -51,10 +51,14 @@ const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
       <h2 className="title">{orderSummary.title}</h2>
       <div className="totalItems">
         <div className="totalItems__number">
-          {getTotalProducts(shoppingCart)} {orderSummary.items}
+          <span data-cy="cart-item-number">
+            {getTotalProducts(shoppingCart)}
+          </span>
+          <span> {orderSummary.items}</span>
         </div>
         <div className="totalItems__price">
-          {getTotalPrice(shoppingCart)} {currency}
+          <span data-cy="cart-price">{getTotalPrice(shoppingCart)}</span>
+          <span>{currency}</span>
         </div>
       </div>
       <div className="discounts">
@@ -62,13 +66,13 @@ const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
         <p className="discounts__row">
           <span>{orderSummary.twoPerOne}</span>
           <span className="discounts__row__price">
-            -{twoPerOne} {currency}
+            -<span data-cy="two-per-one">{twoPerOne}</span> <span>{currency}</span>
           </span>
         </p>
         <p className="discounts__row">
           <span>{orderSummary.bulk}</span>
           <span className="discounts__row__price">
-            -{bulkDiscount} {currency}
+            -<span data-cy="bulk-discount">{bulkDiscount}</span> <span>{currency}</span>
           </span>
         </p>
       </div>
@@ -78,8 +82,8 @@ const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
             {orderSummary.totalCost}:
           </span>
           <span className="totalPrice__total__number">
-            {total}
-            {currency}
+            <span data-cy="cart-item-with-discount">{total}</span>
+            <span>{currency}</span>
           </span>
         </p>
         <Button content={orderSummary.checkout} type="checkoutBtn" />

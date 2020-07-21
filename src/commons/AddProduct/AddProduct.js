@@ -12,12 +12,14 @@ const AddProduct = ({
   return (
     <div className={className}>
       <Button
+        dataCy={`subtract-button-${code}`}
         type="countButton"
         content="-"
         code={code}
         handleFunction={handleDecrementQuantity}
       />
       <input
+        data-cy={`input-quantity-${code}`}
         type="text"
         className="product__quantity"
         value={quantity}
@@ -25,6 +27,7 @@ const AddProduct = ({
         onChange={handleChangeQuantity}
       />
       <Button
+        dataCy={`add-button-${code}`}
         type="countButton"
         content="+"
         code={code}
