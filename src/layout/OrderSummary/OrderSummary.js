@@ -1,28 +1,20 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Checkout from "./Checkout";
+import { Button } from "../../commons";
+import {
+  getTotalProducts,
+  getTotalPrice,
+  getProductByCode,
+} from "../../utils/productFunctions";
 
 const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
   const [twoPerOne, setTwoPerOne] = useState(0);
   const [bulkDiscount, setBulkDiscount] = useState(0);
   const [total, setTotal] = useState("");
 
-  const getTotalProducts = () => {
-    return shoppingCart.reduce((acc, product) => acc + product.quantity, 0);
-  };
-
-  const getPriceByCode = (code) => {
-    return shoppingCart.find((prod) => prod.code === code);
-  };
-
-  const getTotalPrice = () => {
-    return shoppingCart.reduce(
-      (acc, prod) => (acc += prod.quantity * prod.price),
-      0
-    );
-  };
-
   let pricingRules = (code, quantity) => {
-    const price = getPriceByCode(code)?.price;
+    const price = getProductByCode(shoppingCart, code)?.price;
     let discount = null;
     switch (code) {
       case "X2G2OPZ":
@@ -43,7 +35,7 @@ const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
   let objCheckout = new Checkout(pricingRules);
 
   useEffect(() => {
-    shoppingCart.map((product) => {
+    shoppingCart.forEach((product) => {
       let quantity = product.quantity;
       while (quantity > 0) {
         objCheckout.scan(product.code);
@@ -59,10 +51,10 @@ const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
       <h2 className="title">{orderSummary.title}</h2>
       <div className="totalItems">
         <div className="totalItems__number">
-          {getTotalProducts()} {orderSummary.items}
+          {getTotalProducts(shoppingCart)} {orderSummary.items}
         </div>
         <div className="totalItems__price">
-          {getTotalPrice()} {currency}
+          {getTotalPrice(shoppingCart)} {currency}
         </div>
       </div>
       <div className="discounts">
@@ -90,12 +82,17 @@ const OrderSummary = ({ className, orderSummary, currency, shoppingCart }) => {
             {currency}
           </span>
         </p>
-        <button className="totalPrice__checkoutBtn">
-          {orderSummary.checkout}
-        </button>
+        <Button content={orderSummary.checkout} type="checkoutBtn" />
       </div>
     </aside>
   );
+};
+
+OrderSummary.propTypes = {
+  className: PropTypes.string,
+  orderSummary: PropTypes.object,
+  currency: PropTypes.string,
+  shoppingCart: PropTypes.array,
 };
 
 export default OrderSummary;

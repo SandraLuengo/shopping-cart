@@ -11,6 +11,11 @@ export default styled(RowProducts).attrs({})`
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        transition: transform 0.2s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.02);
+        }
       }
       &__quantity,
       &__price {

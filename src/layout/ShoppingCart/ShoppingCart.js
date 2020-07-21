@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import { RowProducts } from "../../commons";
 
 const ShoppingCart = ({
@@ -9,11 +9,11 @@ const ShoppingCart = ({
   shoppingTexts,
   shoppingCart,
   setCartAction,
+  openProductModal,
 }) => {
   const handleChangeQuantity = (e) => {
     let code = e.target.name;
     let value = e.target.value || 0;
-
     updateProductsQuantity(code, parseInt(value));
   };
 
@@ -28,7 +28,9 @@ const ShoppingCart = ({
     const [{ quantity }] = getActualQuantity(code);
     quantity > 0 && updateProductsQuantity(code, quantity - 1);
   };
-
+  const handleModal = (code) => {
+    openProductModal(code);
+  };
   const getActualQuantity = (productCode) => {
     return shoppingCart.filter((product) => product.code === productCode);
   };
@@ -63,6 +65,7 @@ const ShoppingCart = ({
             handleChangeQuantity={handleChangeQuantity}
             handleIncrementQuantity={handleIncrementQuantity}
             handleDecrementQuantity={handleDecrementQuantity}
+            handleModal={handleModal}
             currency={currency}
           />
         ))}
@@ -70,5 +73,16 @@ const ShoppingCart = ({
     </div>
   );
 };
+
+ShoppingCart.propTypes = {
+  className: PropTypes.string,
+  categories: PropTypes.array,
+  currency: PropTypes.string,
+  shoppingTexts: PropTypes.object,
+  shoppingCart: PropTypes.array,
+  setCartAction: PropTypes.func,
+  openProductModal: PropTypes.func,
+};
+
 
 export default ShoppingCart;

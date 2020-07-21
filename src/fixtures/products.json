@@ -4,28 +4,31 @@
       "code": "X7R2OPX",
       "name": "Shirt",
       "price": "20",
-      "image": "shirt.png",
+      "image": "shirt",
       "type": "Shirt",
       "quantity": 1,
-      "currency": "€"
+      "currency": "€",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit penatibus, tortor accumsan malesuada habitasse parturient dapibus inceptos, consequat ornare gravida suscipit praesent fames phasellus. Purus accumsan ligula molestie, lacinia ad. Placerat cras aptent vehicula fusce ut at diam orci."
     },
     {
       "code": "X2G2OPZ",
       "name": "Mug",
       "price": "5",
-      "image": "mug.png",
+      "image": "mug",
       "type": "Mug",
       "quantity": 1,
-      "currency": "€"
+      "currency": "€",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit penatibus, tortor accumsan malesuada habitasse parturient dapibus inceptos, consequat ornare gravida suscipit praesent fames phasellus. Purus accumsan ligula molestie, lacinia ad. Placerat cras aptent vehicula fusce ut at diam orci."
     },
     {
       "code": "X3W2OPY",
       "name": "Cap",
       "price": "10",
-      "image": "cap.png",
+      "image": "cap",
       "type": "Cap",
       "quantity": 1,
-      "currency": "€"
+      "currency": "€",
+      "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit penatibus, tortor accumsan malesuada habitasse parturient dapibus inceptos, consequat ornare gravida suscipit praesent fames phasellus. Purus accumsan ligula molestie, lacinia ad. Placerat cras aptent vehicula fusce ut at diam orci."
     }
   ]
 }

@@ -10,6 +10,7 @@ export default styled(OrderSummary).attrs({})`
   padding: 40px 32px;
   background-color: #f3f3f3;
   color: #212240;
+  z-index: 1;
   .title {
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(33, 34, 64, 0.16);
@@ -58,6 +59,7 @@ export default styled(OrderSummary).attrs({})`
         text-transform: uppercase;
         font-size: 14px;
         line-height: 17px;
+        font-weight: 600;
       }
       &__number {
         font-size: 20px;
